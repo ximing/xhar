@@ -68,8 +68,8 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: devMode ? '[name].css' : '[name].[hash].css',
-            chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
+            filename: '[name].css',
+            chunkFilename: '[id].css'
         }),
         new CleanWebpackPlugin(['dist']),
         new webpack.DefinePlugin({
@@ -79,13 +79,5 @@ module.exports = {
         }),
         new webpack.ProvidePlugin({})
     ],
-    externals: {
-        jquery: 'jQuery',
-        lodash: {
-            commonjs: 'lodash',
-            amd: 'lodash',
-            root: '_',
-            var: '_'
-        }
-    }
+    externals: {}
 };
