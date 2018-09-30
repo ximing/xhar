@@ -1,0 +1,54 @@
+.xhar-detail-inner{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+   flex-direction: column;
+}
+.xhar-detail-header{
+    height: 30px;
+    background: #f3f3f3;
+    line-height: 30px;
+    color: #000000;
+    z-index: 100;
+    .xhar-detail-header-item{
+        display: inline-block;
+        margin: 0;
+        padding: 0 8px;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        &.active{
+            border-bottom: 2px solid #04a9f4;
+        }
+    }
+    .anticon-close{
+        margin: 0 6px;
+        cursor: pointer;
+    }
+}
+.xhar-detail-body{
+    flex: 1;
+    position: relative;
+    padding-top: 10px;
+    .CodeMirror-gutters{
+        background: #FFFFFF;
+    }
+}
+.xhar-detail-header-item{
+    box-sizing: border-box;
+}
+.jsoneditor-dragarea,.jsoneditor-contextmenu{
+    display: none;
+}
+.jsoneditor-tree-inner{
+    .jsoneditor-tree{
+        position: relative;
+        left: -20px;
+    }
+}
+
+.jsoneditor-navigation-bar{
+    display: none;
+}
