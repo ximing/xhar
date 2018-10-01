@@ -29,6 +29,7 @@ export default class extends Component {
             lineWrapping: true,
             height: this.state.height - 5
         });
+        this.editor.setValue(this.props.body || '');
     }
 
     componentWillUnmount() {

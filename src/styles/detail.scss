@@ -53,3 +53,19 @@
 .jsoneditor-navigation-bar{
     display: none;
 }
+
+.xhar-header-item{
+    line-height: 25px;
+    .xhar-hil{
+        display: inline-block;
+        color: #000000;
+        font-weight: 500;
+        &::after{
+            content: ": "
+        }
+        margin-right: 5px;
+    }
+    .xhar-hir{
+        display: inline-block;
+    }
+}

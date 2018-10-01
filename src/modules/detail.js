@@ -23,6 +23,8 @@ export default class extends Component {
     };
 
     render() {
+        const { detail, body } = this.props;
+        const { response } = detail;
         return (
             <div className="xhar-detail">
                 <div className="xhar-detail-inner">
@@ -62,11 +64,14 @@ export default class extends Component {
                     <div className="xhar-detail-body">
                         {do {
                             if (this.state.selected === 'headers') {
-                                <HeadersPreview />;
-                            } else if (this.state.selected === 'preview') {
-                                <JSONPreview />;
+                                <HeadersPreview detail={this.props.detail} />;
+                            } else if (
+                                this.state.selected === 'preview' &&
+                                response.content.mimeType === 'application/json'
+                            ) {
+                                <JSONPreview detail={this.props.detail} body={body} />;
                             } else {
-                                <CodePreview />;
+                                <CodePreview detail={this.props.detail} body={body} />;
                             }
                         }}
                     </div>

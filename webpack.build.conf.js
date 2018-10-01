@@ -11,8 +11,8 @@ module.exports = webpackMmerge(common, {
     entry: './src/modules/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'xjar.js',
-        library: 'xjar',
+        filename: 'xhar.js',
+        library: 'xhar',
         libraryTarget: 'umd'
     },
     module: {

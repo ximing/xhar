@@ -13,15 +13,7 @@ export default class extends Component {
             mode: 'tree'
         };
         this.jsoneditor = new JSONEditor(container, options);
-
-        const json = {
-            Array: [1, 2, 3],
-            Boolean: true,
-            Null: null,
-            Number: 123,
-            Object: { a: 'b', c: 'd' },
-            String: 'Hello World'
-        };
+        const json = this.props.body || {};
         this.jsoneditor.set(json);
     }
 

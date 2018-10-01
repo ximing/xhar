@@ -69,3 +69,4 @@ config
 
 src/config.js
 
+dist
