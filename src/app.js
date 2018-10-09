@@ -1,7 +1,7 @@
 /**
  * Created by ximing on 2018/8/3.
  */
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import MainModules from './modules';
 // import MainModules from '../dist/xhar';
@@ -922,4 +922,9 @@ const har = {
         ]
     }
 };
-ReactDOM.render(<MainModules har={har} />, document.getElementById('wrap_container'));
+class DEMO extends Component {
+    render() {
+        return <MainModules har={har} />;
+    }
+}
+ReactDOM.render(<DEMO har={har} />, document.getElementById('wrap_container'));

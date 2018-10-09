@@ -7,7 +7,7 @@ const webpackMmerge = require('webpack-merge');
 const common = require('./webpack.common.config');
 
 module.exports = webpackMmerge(common, {
-    mode: 'production', // "production" | "development" | "none"
+    mode: 'development', // "production" | "development" | "none"
     entry: './src/modules/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),

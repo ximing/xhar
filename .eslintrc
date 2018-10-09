@@ -1,16 +1,12 @@
 {
   "extends": ["airbnb","prettier"],
   "globals": {
-    "Page": true,
-    "Component": true,
-    "App":true,
-    "wx": true,
-    "getApp": true,
-    "getCurrentPages":true,
-    "Behavior": true
+    "window": true,
+    "document": true
   },
   "rules": {
     "react/jsx-filename-extension":"off",
+    "react/jsx-indent":"off",
     "react/prefer-stateless-function":"off",
     "import/prefer-default-export":1,
     "one-var":"off",
