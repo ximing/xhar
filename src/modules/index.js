@@ -9,6 +9,9 @@ import { Column, Table } from 'react-virtualized';
 import rowRender from './rowRender';
 import Detail from './detail';
 
+/*
+* http://www.softwareishard.com/blog/har-12-spec/
+* */
 export default class Panel extends Component {
     constructor(props) {
         super(props);

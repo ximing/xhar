@@ -49,11 +49,18 @@ export default class extends Component {
     // }
 
     render() {
+        let body = this.props.body;
+        if(typeof this.props.body==='string'){
+            try{
+                body = JSON.parse(this.props.body)
+            }catch (e) {
+                body = {text:body}
+        }
         return (
             <Inspector
                 theme={theme}
                 expandLevel={5}
-                data={this.props.json || json}
+                data={body || {}}
                 id="xharJSONPreview"
             />
         );

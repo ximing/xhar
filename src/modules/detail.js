@@ -69,9 +69,15 @@ export default class extends Component {
                                 this.state.selected === 'preview' &&
                                 response.content.mimeType === 'application/json'
                             ) {
-                                <JSONPreview detail={this.props.detail} body={body} />;
+                                <JSONPreview
+                                    detail={this.props.detail}
+                                    body={response.content.text}
+                                />;
                             } else {
-                                <CodePreview detail={this.props.detail} body={body} />;
+                                <CodePreview
+                                    detail={this.props.detail}
+                                    body={response.content.text}
+                                />;
                             }
                         }}
                     </div>
