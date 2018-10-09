@@ -7,14 +7,14 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMmerge = require('webpack-merge');
 const common = require('./webpack.common.config');
-
+const port = 9123;
 module.exports = webpackMmerge(common, {
     mode: 'development', // "production" | "development" | "none"
     entry: './src/app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.js',
-        publicPath: 'http://127.0.0.1:9123/'
+        publicPath: `http://127.0.0.1:${port}/`
     },
     module: {
         rules: [
@@ -50,13 +50,13 @@ module.exports = webpackMmerge(common, {
         hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
         https: false, // true for self-signed, object for cert authority
         noInfo: false, // only errors & warns on hot reload
-        port: 9123,
+        port: port,
         host: '0.0.0.0',
-        disableHostCheck:true,
+        disableHostCheck: true,
         headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+            'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
         }
     },
     plugins: [

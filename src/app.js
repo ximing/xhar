@@ -4,6 +4,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainModules from './modules';
+// import MainModules from '../dist/xhar';
 const har = {
     log: {
         version: '1.2',
