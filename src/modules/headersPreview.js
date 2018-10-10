@@ -107,9 +107,9 @@ export default class extends Component {
                     <Panel header="Request Headers" key="3">
                         {this.renderHeaders(detail.response.headers)}
                     </Panel>
-                    {detail.response.content.text && (
-                        <Panel header="Request Payload" key="3">
-                            {detail.response.content.text}
+                    {detail.request.postData && detail.request.postData.text && (
+                        <Panel header="Request Payload" key="4">
+                            {detail.request.postData.text}
                         </Panel>
                     )}
                 </Collapse>

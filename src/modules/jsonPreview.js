@@ -17,7 +17,7 @@ const json = {
 };
 const theme = {
     ...chromeLight,
-    ...{ TREENODE_PADDING_LEFT: 20, BASE_FONT_SIZE: '14px', TREENODE_FONT_SIZE: '14px' }
+    ...{ TREENODE_PADDING_LEFT: 20, BASE_FONT_SIZE: '12px', TREENODE_FONT_SIZE: '12px' }
 };
 export default class extends Component {
     componentDidMount() {
@@ -50,19 +50,15 @@ export default class extends Component {
 
     render() {
         let body = this.props.body;
-        if(typeof this.props.body==='string'){
-            try{
-                body = JSON.parse(this.props.body)
-            }catch (e) {
-                body = {text:body}
+        if (typeof this.props.body === 'string') {
+            try {
+                body = JSON.parse(this.props.body);
+            } catch (e) {
+                body = { text: body };
+            }
+            return (
+                <Inspector theme={theme} expandLevel={5} data={body || {}} id="xharJSONPreview" />
+            );
         }
-        return (
-            <Inspector
-                theme={theme}
-                expandLevel={5}
-                data={body || {}}
-                id="xharJSONPreview"
-            />
-        );
     }
 }

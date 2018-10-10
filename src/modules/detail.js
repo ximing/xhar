@@ -67,7 +67,7 @@ export default class extends Component {
                                 <HeadersPreview detail={this.props.detail} />;
                             } else if (
                                 this.state.selected === 'preview' &&
-                                response.content.mimeType === 'application/json'
+                                response.content && response.content.mimeType.indexOf('application/json') >=0
                             ) {
                                 <JSONPreview
                                     detail={this.props.detail}
@@ -76,7 +76,7 @@ export default class extends Component {
                             } else {
                                 <CodePreview
                                     detail={this.props.detail}
-                                    body={response.content.text}
+                                    body={response.content?response.content.text:''}
                                 />;
                             }
                         }}

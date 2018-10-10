@@ -17,7 +17,7 @@ export default function defaultRowRenderer({
     rowData,
     style
 }) {
-    console.log('index', index, className, style);
+    // console.log('index', index, className, style);
     const a11yProps = {};
 
     if (onRowClick || onRowDoubleClick || onRowMouseOut || onRowMouseOver || onRowRightClick) {

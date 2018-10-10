@@ -33,6 +33,8 @@
     flex: 1;
     position: relative;
     padding-top: 10px;
+    overflow: auto;
+    padding: 10px 10px 20px 10px;
     .CodeMirror-gutters{
         background: #FFFFFF;
     }
@@ -56,6 +58,8 @@
 
 .xhar-header-item{
     line-height: 25px;
+    word-wrap: break-word;
+    word-break: normal;
     .xhar-hil{
         display: inline-block;
         color: #000000;

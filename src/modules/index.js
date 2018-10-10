@@ -27,93 +27,22 @@ export default class Panel extends Component {
                 scheme: 2,
                 type: 2
             },
-            visible: true,
-            detail: {
-                name: 'http://127.0.0.1:9123/app.js',
-                method: 'GET',
-                type: 'application/javascript',
-                status: 200,
-                scheme: 'http',
-                startedDateTime: '2018-09-30T08:59:50.393Z',
-                time: 306.4506589669618,
-                request: {
-                    method: 'GET',
-                    url: 'http://127.0.0.1:9123/app.js',
-                    httpVersion: 'http/1.1',
-                    headers: [
-                        { name: 'Referer', value: 'http://0.0.0.0:9123/' },
-                        {
-                            name: 'User-Agent',
-                            value:
-                                'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
-                        }
-                    ],
-                    queryString: [],
-                    cookies: [],
-                    headersSize: -1,
-                    bodySize: 0
-                },
-                response: {
-                    status: 200,
-                    statusText: 'OK',
-                    httpVersion: 'http/1.1',
-                    headers: [
-                        { name: 'Date', value: 'Sun, 30 Sep 2018 08:59:50 GMT' },
-                        { name: 'Content-Encoding', value: 'gzip' },
-                        { name: 'ETag', value: 'W/"4a245d-S7XcoNrxtBu09Jozji1ZyECOf1k"' },
-                        { name: 'X-Powered-By', value: 'Express' },
-                        { name: 'Vary', value: 'Accept-Encoding' },
-                        {
-                            name: 'Access-Control-Allow-Methods',
-                            value: 'GET, POST, PUT, DELETE, PATCH, OPTIONS'
-                        },
-                        { name: 'Content-Type', value: 'application/javascript; charset=UTF-8' },
-                        { name: 'Access-Control-Allow-Origin', value: '*' },
-                        { name: 'Transfer-Encoding', value: 'chunked' },
-                        { name: 'Connection', value: 'keep-alive' },
-                        { name: 'Accept-Ranges', value: 'bytes' },
-                        {
-                            name: 'Access-Control-Allow-Headers',
-                            value: 'X-Requested-With, content-type, Authorization'
-                        }
-                    ],
-                    cookies: [],
-                    content: { size: 4858973, mimeType: 'application/javascript' },
-                    redirectURL: '',
-                    headersSize: -1,
-                    bodySize: -1,
-                    _transferSize: 1057994
-                },
-                cache: {},
-                timings: {
-                    blocked: 13.966659000001382,
-                    dns: -1,
-                    ssl: -1,
-                    connect: -1,
-                    send: 0.0730000000000004,
-                    wait: 40.97699999081716,
-                    receive: 251.43399997614324,
-                    _blocked_queueing: 1.6590000013820827,
-                    _blocked_proxy: 2.612
-                },
-                serverIPAddress: '127.0.0.1',
-                connection: '520805',
-                pageref: 'page_153'
-            },
-            pages: props.har.log.pages,
-            entries: props.har.log.entries
+            visible: false,
+            detail: {},
+            pages: props.har.log.pages
         };
     }
+
 
     onClose = () => {
         this.setState({ visible: false });
     };
 
     getRenderData() {
-        return this.state.entries.map((item) => ({
+        return this.props.har.log.entries.map((item) => ({
             name: item.request.url,
             method: item.request.method,
-            type: item.response.content.mimeType,
+            type: item.response.content?item.response.content.mimeType:'text/html',
             status: item.response.status,
             scheme: 'http',
             ...item
