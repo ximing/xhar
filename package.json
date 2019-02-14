@@ -1,6 +1,6 @@
 {
   "name": "@yeanzhi/xhar",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "main": "dist/xhar.js",
   "scripts": {
@@ -90,18 +90,11 @@
     "jsoneditor": "^5.24.6",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
-    "rabjs": "^5.0.0",
     "rc-trigger": "^2.6.2",
-    "react": "^16.5.2",
-    "react-dnd": "^5.0.0",
-    "react-dnd-html5-backend": "^5.0.1",
-    "react-dom": "^16.5.2",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "react-inspector": "^2.3.0",
-    "react-loadable": "^5.5.0",
     "react-measure": "^2.1.2",
-    "react-router": "^4.3.1",
-    "react-router-transition": "^1.2.1",
-    "react-sortable-hoc": "^0.8.3",
     "react-virtualized": "^9.20.1"
   }
 }
